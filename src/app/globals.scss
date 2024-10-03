@@ -1,0 +1,19 @@
+/* SCSS Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+  font-family: "Inter", sans-serif; /* Ensure Inter is used */
+  background-color: #121212; // Dark background
+}
+
+body {
+  max-width: 1140px;
+  padding: 16px;
+  margin: 0 auto; /* Center the content */
+}

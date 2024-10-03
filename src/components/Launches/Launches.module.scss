@@ -1,0 +1,61 @@
+.launchesContainer {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  padding: 20px;
+}
+
+.launchCard {
+  background-color: #1e1e1e; // Slightly lighter dark for card
+  color: #ffffff; // White text
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: transform 0.2s;
+  width: 300px; // Fixed width for cards
+
+  &:hover {
+    transform: translateY(-5px);
+  }
+}
+
+.missionPatch {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
+
+.launchTitle {
+  margin: 0;
+  font-size: 1.5em;
+}
+
+.launchDate {
+  margin: 10px 0;
+  font-size: 1em;
+  color: #cccccc; // Slightly lighter text for date
+}
+
+.rocketName {
+  margin: 10px 0;
+  font-size: 1em;
+  color: #cccccc; // Slightly lighter text for rocket name
+}
+
+.link {
+  display: inline-block;
+  margin-top: 10px;
+  color: #1e90ff; // Link color
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+.linksContainer {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+}

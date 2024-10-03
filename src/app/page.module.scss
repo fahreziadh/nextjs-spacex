@@ -1,0 +1,63 @@
+// Define some variables for colors and spacing
+$primary-color: #0070f3;
+$secondary-color: #1c1c1e;
+$text-color: #a2a2a2;
+$spacing-unit: 16px;
+
+.page {
+  color: $text-color;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: $spacing-unit;
+}
+
+.title {
+  color: $primary-color;
+  font-size: 2.5rem;
+  margin-bottom: $spacing-unit;
+}
+
+.subtitle {
+  color: $primary-color;
+  font-size: 2rem;
+  margin-bottom: $spacing-unit / 2;
+}
+
+.subheading {
+  color: $primary-color;
+  font-size: 1.5rem;
+  margin-bottom: $spacing-unit / 4;
+}
+
+.paragraph {
+  line-height: 1.6;
+  margin-bottom: $spacing-unit;
+}
+
+.link {
+  color: $primary-color;
+  text-decoration: none;
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+.launchDetails {
+  background-color: $secondary-color;
+  color: #fff;
+  padding: $spacing-unit;
+  border-radius: 8px;
+  margin-top: $spacing-unit;
+}
+
+.launchDetailsLink {
+  color: #fff;
+  &:hover {
+    text-decoration: underline;
+  }
+}
