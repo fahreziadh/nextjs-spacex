@@ -1,7 +1,7 @@
 import z from "zod";
 
 const envSchema = z.object({
-  GRAPHQL_URI: z.string(),
+  NEXT_PUBLIC_GRAPHQL_URI: z.string(),
 });
 
 export const getEnv = () => {

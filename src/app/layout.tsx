@@ -1,6 +1,7 @@
 import "./globals.scss";
 import { Inter } from "next/font/google";
 import { Navigation } from "@/components/navigation";
+import { ApolloWrapperClient } from "../lib/apollo.client";
 
 const inter = Inter({ subsets: ["latin"] }); // Load Inter font
 
@@ -17,8 +18,10 @@ export default function RootLayout({
   return (
     <html lang="en" className={inter.className}>
       <body>
-        <Navigation />
-        {children}
+        <ApolloWrapperClient>
+          <Navigation />
+          {children}
+        </ApolloWrapperClient>
       </body>
     </html>
   );

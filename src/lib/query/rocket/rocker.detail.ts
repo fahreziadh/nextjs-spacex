@@ -1,7 +1,7 @@
 import { gql } from "@/__generated__";
 
-export const GET_ROCKET = gql(`
-  query GetRocket($id: ID!) {
+export const GET_ROCKET_DETAIL = gql(`
+  query GetRocketDetail($id: ID!) {
     rocket(id: $id) {
       active
       boosters
@@ -32,7 +32,7 @@ export const GET_ROCKET = gql(`
         version
       }
       first_flight
-  
+
       height {
         feet
         meters
@@ -53,7 +53,7 @@ export const GET_ROCKET = gql(`
         lb
         name
       }
-  
+
       stages
       success_rate_pct
       type

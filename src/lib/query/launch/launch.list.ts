@@ -1,8 +1,8 @@
-import { gql } from "@/__generated__";
+import { gql } from "@/__generated__/";
 
 export const GET_LAUNCH_LIST = gql(`
-  query GetLaunches {
-    launches {
+  query GetLaunchList($limit: Int!, $offset: Int!) {
+    launches(limit: $limit, offset: $offset) {
       id
       mission_name
       launch_date_utc
@@ -16,3 +16,4 @@ export const GET_LAUNCH_LIST = gql(`
     }
   }
 `);
+

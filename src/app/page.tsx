@@ -1,6 +1,12 @@
 import styles from "./page.module.scss"; // Ensure styles are imported
 import { LaunchService } from "@/services/launch.service";
 
+export const revalidate = 900 // 15 minutes
+export const dynamic = "force-static"
+export const generateStaticParams = async() =>{
+  return []
+}
+
 export default async function Page() {
   const dataLaunchLatest = await new LaunchService().getLatestLaunch()
 

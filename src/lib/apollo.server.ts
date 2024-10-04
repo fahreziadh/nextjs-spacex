@@ -7,13 +7,13 @@ import {
 import { getEnv } from "./getEnv";
 // Import the generated types
 
-const { GRAPHQL_URI } = getEnv();
+const { NEXT_PUBLIC_GRAPHQL_URI } = getEnv();
 
 const httpLink = new HttpLink({
-  uri: GRAPHQL_URI,
+  uri: NEXT_PUBLIC_GRAPHQL_URI,
 });
 
-const client = new ApolloClient({
+const server = new ApolloClient({
   link:
     typeof window === "undefined"
       ? from([
@@ -27,4 +27,4 @@ const client = new ApolloClient({
   cache: new InMemoryCache(),
 });
 
-export default client;
+export default server;

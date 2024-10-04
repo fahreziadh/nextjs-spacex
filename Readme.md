@@ -1,8 +1,36 @@
 # SpaceX Launches Project - by Fahrezi Adha
 
-## Project Structure
+## Prerequisites
+Please set up environment variables in the `.env.example` file and rename it to `.env`.
+```env
+NEXT_PUBLIC_GRAPHQL_URI=https://spacex-production.up.railway.app/
+```
 
-Aku telah merubah struktur project nya menjadi seperti ini, ada folder lib/query dan menyimpan semua definisi query graphQL di dalamnya, ada juga folder services yang berisikan class untuk mendapatkan data dari API SpaceX, dan juga folder hooks yang berisikan fungsi untuk mengambil data untuk client-side.
+
+
+## Getting Started
+
+1. **Install Dependencies**
+    ```bash
+    npm install
+    ```
+
+2. **Generate Types for GraphQL Queries**
+    ```bash
+    npm run generate
+    ```
+    Or
+    ```bash
+    npm run generate:watch
+    ```
+
+3. **Run the Development Server**
+    ```bash
+    npm run dev
+    ```
+
+
+## Project Structure
 
 ```
 src/
@@ -21,10 +49,25 @@ src/
 └── services/                  # Services for fetching data from SpaceX API
 ```
 
+## GraphQL Codegen
+To activate codegen, I added some TypeScript plugins that can be seen in `codegen.ts`. To generate types, run the following script:
+```
+npm run generate
+```
+or
+```
+npm run generate --watch
+```
+
 ## On-Demand Revalidation
 
-Semua halaman akan dibuild static dan ter-revalidate selama 15 menit, tetapi kita juga bisa melakukan revalidasi secara on-demand dengan menggunakan endpoint:
+All pages will be statically built and revalidated for 15 minutes, but we can also perform on-demand revalidation using the following endpoint:
 
-```/api/revalidate?path=/launches/123 //Untuk revalidasi halaman spesifik
-atau
-/api/revalidate?path=* //Untuk revalidasi semua halaman```
+```
+/api/revalidate?path=/launches/123
+```
+
+Or if you want to revalidate all pages, use the path `*`
+```
+/api/revalidate?path=*
+```

@@ -7,7 +7,9 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "generate": "graphql-codegen"
+    "generate": "graphql-codegen",
+    "generate:watch": "graphql-codegen --watch",
+    "test": "npx playwright test"
   },
   "dependencies": {
     "@apollo/client": "^3.11.8",
@@ -22,11 +24,14 @@
   "devDependencies": {
     "@graphql-codegen/cli": "^5.0.2",
     "@graphql-codegen/client-preset": "^4.3.3",
+    "@parcel/watcher": "^2.4.1",
+    "@playwright/test": "^1.47.2",
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",
     "eslint": "^8",
     "eslint-config-next": "14.2.14",
+    "playwright": "^1.47.2",
     "typescript": "^5"
   }
 }
