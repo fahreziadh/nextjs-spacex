@@ -1,6 +1,6 @@
 import client from "@/lib/apolloClient";
-import { GET_LAUNCHES } from "./Launches.query";
-import styles from "./Launches.module.scss";
+import { GET_LAUNCHES } from "./launches.query";
+import styles from "./launches.module.scss";
 
 export const Launches = async () => {
   const { data } = await client.query({

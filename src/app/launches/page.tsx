@@ -1,4 +1,4 @@
-import { Launches } from '@/components/Launches';
+import { Launches } from '@/components/launches';
 import React from 'react';
 
 export default function LaunchesPage() {

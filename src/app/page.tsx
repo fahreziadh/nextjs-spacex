@@ -1,9 +1,8 @@
-import client from "@/lib/apolloClient";
-import { LATEST_LAUNCH_QUERY } from "./page.query";
 import styles from "./page.module.scss"; // Ensure styles are imported
+import { LaunchService } from "@/services/launch.service";
 
 export default async function Page() {
-  const { data } = await client.query({ query: LATEST_LAUNCH_QUERY });
+  const dataLaunchLatest = await new LaunchService().getLatestLaunch()
 
   return (
     <div className={styles.page}>
@@ -15,17 +14,17 @@ export default async function Page() {
         </p>
 
         <h2 className={styles.subtitle}>Latest SpaceX Launch</h2>
-        {data.launchLatest ? (
-          <div key={data.launchLatest.id} className={styles.launchDetails}>
-            <h3 className={styles.subheading}>{data.launchLatest.mission_name}</h3>
-            <p className={styles.paragraph}>{data.launchLatest.details}</p>
+        {dataLaunchLatest ? (
+          <div key={dataLaunchLatest.id} className={styles.launchDetails}>
+            <h3 className={styles.subheading}>{dataLaunchLatest.mission_name}</h3>
+            <p className={styles.paragraph}>{dataLaunchLatest.details}</p>
             <p className={styles.paragraph}>
               <strong>Date:</strong>{" "}
-              {new Date(data.launchLatest.launch_date_utc).toLocaleDateString()}
+              {new Date(dataLaunchLatest.launch_date_utc).toLocaleDateString()}
             </p>
-            {data.launchLatest.links?.video_link && (
+            {dataLaunchLatest.links?.video_link && (
               <a
-                href={data.launchLatest.links?.video_link}
+                href={dataLaunchLatest.links?.video_link}
                 target="_blank"
                 rel="noopener noreferrer"
                 className={styles.launchDetailsLink}
