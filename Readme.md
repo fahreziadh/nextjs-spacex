@@ -1,4 +1,4 @@
-# SpaceX Launches Project - by Fahrezi Adha
+# SpaceX Launches Project - Fahrezi Adha
 
 ## Prerequisites
 Please set up environment variables in the `.env.example` file and rename it to `.env`.
